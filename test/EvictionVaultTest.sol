@@ -63,7 +63,7 @@ contract EvictionVaultTest is Test {
         vm.prank(user1);
         evault.deposit{value: depoAmt}();
         // balance after deposit
-        uint256 initialBalance = evault.getUserBalance(user1);
+        // uint256 initialBalance = evault.getUserBalance(user1);
 
         vm.prank(user1);
         evault.withdraw(withdrawAmount);
@@ -93,7 +93,6 @@ contract EvictionVaultTest is Test {
         proof[0] = leaf;
     
         uint256 initialVaultValue = evault.getTotalVaultValue();
-        uint256 initialUserBalance = user1.balance;
         uint amtDiff = initialVaultValue - 1 ether;
         
         vm.prank(user1);
@@ -133,8 +132,8 @@ contract EvictionVaultTest is Test {
         assertEq(confirmations, 2);
     }
 
-    // God abeg make this test no fail tomorrow😢
-
+    
+    // God abeg😢
     
 }
 
